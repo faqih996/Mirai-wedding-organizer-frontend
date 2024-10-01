@@ -1,10 +1,17 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
     images: {
         remotePatterns: [
             {
-                protocol: 'https',
-                hostname: 'weddingorganizer.test',
+                protocol: 'http',
+                hostname: 'wedding-organizer-backend.test',
+                port: '', // Leave empty if there's no specific port
+                pathname: '/**', // Allow any path
+            },
+            {
+                protocol: 'http',
+                hostname: 'wedding-organizer-backend.test',
                 port: '',
                 pathname: '/api/**',
             },
@@ -17,7 +24,8 @@ const nextConfig = {
         });
 
         return config;
-    }
+    },
 };
 
 export default nextConfig;
+
